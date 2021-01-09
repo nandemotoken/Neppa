@@ -25,7 +25,6 @@ async function usesaunakey(){
     mycontract = await new web3tr.eth.Contract(abi, Address);
     let useraddress = await web3tr.eth.getAccounts();
     window.alert("確認ボタンを押して、サウナキーを発行してください。約10秒かかります。")
-    window.open("https://explorer-mainnet.maticvigil.com/tokens/0x52FAD36d259a4b35Dc6057cc2e3257b2e371b711/inventory", "_blank");
     let ret = await mycontract.methods.mint().send({ from: useraddress[0] });
     window.alert("サウナキーを発行しました。saunaの画像をクリックして入室してください。")
     console.log("useraddress[0]_is_your_Address:" + useraddress[0]);
